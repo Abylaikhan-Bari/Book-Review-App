@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-q+sil^_t#+^)cpy2fwd*o_b%8-&pgwj&$&@p8h97#ph_oq*v@q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
@@ -38,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
+    'books',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'booklibrary.urls'
@@ -68,6 +73,7 @@ TEMPLATES = [
         },
     },
 ]
+CORS_ALLOW_ALL_ORIGINS = True  # For development only, restrict this in production
 
 WSGI_APPLICATION = 'booklibrary.wsgi.application'
 
