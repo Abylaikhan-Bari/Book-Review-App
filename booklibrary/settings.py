@@ -63,10 +63,18 @@ REST_FRAMEWORK = {
 }
 
 # Configure allauth to not use usernames
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+# Authentication method: Options are 'username' (default), 'email', or 'username_email'
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+
+# Require username for signing up
+ACCOUNT_USERNAME_REQUIRED = True
+
+# Email is not required if you are using usernames only
+ACCOUNT_EMAIL_REQUIRED = False
+
+# Whether or not an email should be unique
+ACCOUNT_UNIQUE_EMAIL = False
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
