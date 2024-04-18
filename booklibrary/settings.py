@@ -72,6 +72,7 @@ ACCOUNT_EMAIL_REQUIRED = False
 
 # Whether or not an email should be unique
 ACCOUNT_UNIQUE_EMAIL = False
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 
 MIDDLEWARE = [
